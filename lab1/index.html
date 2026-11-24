@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ЛР №1 — Вариант 22682</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="student-header">
+    <table class="header-table">
+      <tr>
+        <td class="student-name">Otu Daniel Archibong</td>
+        <td>Группа: P3230</td>
+        <td>Вариант: 22682</td>
+      </tr>
+    </table>
+  </header>
+
+  <main>
+    <h1>Проверка попадания точки в область</h1>
+    <table class="main-layout">
+      <tr>
+        <td class="graph-cell">
+          <section aria-labelledby="graph-title">
+            <h2 id="graph-title">Координатная плоскость</h2>
+            <canvas id="graph" width="500" height="500" aria-label="Координатная плоскость с областью"></canvas>
+            <p class="hint">Выберите R, чтобы обновить масштаб области. Точки из истории отображаются на графике.</p>
+          </section>
+        </td>
+        <td class="form-cell">
+          <section>
+            <h2>Параметры точки</h2>
+            <form id="point-form" novalidate>
+              <fieldset>
+                <legend>X — выберите одно или несколько значений</legend>
+                <div class="choice-grid" id="x-options">
+                  <label><input type="checkbox" name="x" value="-3"> −3</label>
+                  <label><input type="checkbox" name="x" value="-2"> −2</label>
+                  <label><input type="checkbox" name="x" value="-1"> −1</label>
+                  <label><input type="checkbox" name="x" value="0"> 0</label>
+                  <label><input type="checkbox" name="x" value="1"> 1</label>
+                  <label><input type="checkbox" name="x" value="2"> 2</label>
+                  <label><input type="checkbox" name="x" value="3"> 3</label>
+                  <label><input type="checkbox" name="x" value="4"> 4</label>
+                  <label><input type="checkbox" name="x" value="5"> 5</label>
+                </div>
+              </fieldset>
+
+              <label class="field-label" for="y">Y — число от −3 до 5</label>
+              <input id="y" name="y" type="text" inputmode="decimal" autocomplete="off" placeholder="Например, 1.25" aria-describedby="y-help">
+              <small id="y-help">Можно использовать точку или запятую в качестве десятичного разделителя.</small>
+
+              <fieldset>
+                <legend>R — выберите одно или несколько значений</legend>
+                <div class="choice-grid">
+                  <label><input type="checkbox" name="r" value="1"> 1</label>
+                  <label><input type="checkbox" name="r" value="2"> 2</label>
+                  <label><input type="checkbox" name="r" value="3"> 3</label>
+                  <label><input type="checkbox" name="r" value="4"> 4</label>
+                  <label><input type="checkbox" name="r" value="5"> 5</label>
+                </div>
+              </fieldset>
+
+              <p id="form-message" class="form-message" role="status" aria-live="polite"></p>
+              <div class="actions">
+                <button type="submit">Проверить точку</button>
+                <button type="button" id="clear-history" class="secondary">Очистить историю</button>
+              </div>
+            </form>
+          </section>
+        </td>
+      </tr>
+    </table>
+
+    <section class="results-section">
+      <h2>Результаты проверок</h2>
+      <div class="table-wrap">
+        <table class="results-table">
+          <thead>
+            <tr>
+              <th scope="col">X</th>
+              <th scope="col">Y</th>
+              <th scope="col">R</th>
+              <th scope="col">Попадание</th>
+              <th scope="col">Дата и время проверки</th>
+            </tr>
+          </thead>
+          <tbody id="results-body">
+            <tr id="empty-row"><td colspan="5">Пока нет результатов. Отправьте форму, чтобы проверить точку.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+  <footer>Лабораторная работа №1 · Web Programming · ITMO</footer>
+</body>
+</html>
